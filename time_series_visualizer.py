@@ -14,16 +14,13 @@ df = df[(df['value'] >= df['value'].quantile(0.025)) & (df['value'] <= df['value
 
 def draw_line_plot():
     # Draw line plot
-    fig = plt.figure()
-
+    fig = plt.figure(figsize=(15,6))
     plt.plot(df.index, df['value'], color='red', label='Page Views')
 
     # Adding titles and labels
     plt.title('Daily freeCodeCamp Forum Page Views 5/2016-12/2019')
     plt.xlabel('Date')
     plt.ylabel('Page Views')
-    plt.legend()
-    plt.grid(True)
 
     # Save image and return fig (don't change this part)
     fig.savefig('line_plot.png')
